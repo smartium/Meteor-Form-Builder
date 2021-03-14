@@ -1,0 +1,4 @@
+{
+    "ngrokForVSCode.configPath": "/home/luizinho/.ngrok2/ngrok.yml",
+    "meteorhelper.meteorPath": "/usr/local/bin/meteor"
+}

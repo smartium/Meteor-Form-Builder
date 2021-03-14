@@ -1,0 +1,97 @@
+<head>
+    <meta charset="utf-8">
+    <meta content="initial-scale=1, shrink-to-fit=no, width=device-width" name="viewport">
+    <title>SMARTIUM labs</title>
+    <link
+        href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i|Roboto+Mono:300,400,700|Roboto+Slab:300,400,700"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous">
+    </script>
+</head>
+
+<body>
+
+    <!-- Image and text -->
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="/images/smrtm-logo.png" alt="" width="30" height="30" class="d-inline-block align-top">
+                SMARTIUM labs
+            </a>
+        </div>
+    </nav>
+
+    <div class="container px-4">
+        <br>
+        <h1 class="text-center">Gerador de Formulário</h1>
+        <br>
+        <div class="row gy-20">
+            <div class="col p-10">
+                <div id="fb-editor"></div>
+
+                <div class="pull-right">
+                    <button type="button" id="renderForm" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalFullscreen">
+                        Pré vizualizar
+                    </button>
+                    <button type=button id="saveForm" class="btn btn-success">Salvar</button>
+                </div>
+            </div>
+        </div>
+        <br><br>
+
+
+        
+
+        <h1>FORMULÁRIOS GERADOS</h1>
+        {{#each forms}}
+        <div class="row gx-5 gy-5">
+            <div class="col">
+                <div class="p-3 border bg-light">
+                    <div class="">
+                        <div class="row pull-right">
+                            <h4>Código do formulário: <span
+                                    class="badge rounded-pill bg-warning text-dark">{{code}}</span></h4>
+                        </div>
+
+                        <form action="">
+                            {{{formsRender this}}}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        {{/each}}
+
+
+    </div>
+
+    <!-- Button trigger modal -->
+    
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalFullscreen" tabindex="-1" aria-labelledby="exampleModalFullscreenLabel"
+        style="display: none;" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title h4" id="exampleModalFullscreenLabel">Pré vizualizaćão</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="fb-render"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</body>
